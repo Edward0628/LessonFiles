@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    /* 黑色主體與版面色調 */
+    --body-bg: #121212;
+    /* 深黑：網頁大背景 */
+    --content-bg: #1e1e1e;
+    /* 質感炭黑：內容主區塊背景 */
+    --footer-bg: #1a1a1a;
+    /* 暗黑：頁尾背景 */
+
+    /* 白色文字 */
+    --text-main: #ffffff;
+    /* 純白：內文主文字顏色 */
+    --text-muted: #aaaaaa;
+    /* 淺灰白：頁尾等輔助文字顏色 */
+    --heading-color: #ffffff;
+    /* 純白：大標題顏色 */
+
+    /* 高亮橘色 Banner 與導覽列按鈕 */
+    --nav-bg: #ff6600;
+    /* 高亮強烈橘：導覽列（Banner）背景 */
+    --nav-btn-bg: #121212;
+    /* 深黑：導覽按鈕背景 */
+    --nav-btn-text: #ffffff;
+    /* 純白：導覽按鈕文字 */
+    --nav-btn-hover-bg: #ffffff;
+    /* 純白：導覽按鈕懸停背景 */
+    --nav-btn-hover-text: #ff6600;
+    /* 高亮強烈橘：導覽按鈕懸停文字 */
+
+    /* 內容區按鈕 (Content Action Link) */
+    --action-btn-bg: #ff6600;
+    /* 高亮強烈橘：了解更多按鈕背景 */
+    --action-btn-text: #ffffff;
+    /* 純白：了解更多按鈕文字 */
+    --action-btn-hover-bg: #ffffff;
+    /* 純白：了解更多按鈕懸停背景 */
+    --action-btn-hover-text: #121212;
+    /* 深黑：了解更多按鈕懸停文字 */
+
+    /* 橘色 Logo 預設背景與陰影 */
+    --logo-default-bg: #ff6600;
+    /* 高亮強烈橘：Logo未載入圖片時的背景 */
+    --shadow-nav: #cc5200;
+    /* 深橘陰影：導覽按鈕預設陰影 */
+    --shadow-nav-hover: #ffffff;
+    /* 純白發光：導覽按鈕懸停時的陰影 */
+    --shadow-action: #000000;
+    /* 曜石黑：內容區按鈕陰影 */
+}
+
+body {
+    font-family: "IBM Plex Sans JP", sans-serif;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+.mytitle01 {
+    font-size: 90px;
+    font-weight: 900;
+    color: var(--nav-bg);
+    text-align: center;
+}
+.mytitle02 {
+    font-size: 75px;
+    font-weight: 700;
+    color: var(--content-bg);
+    text-align: center;
+}
+.mytitle03 {
+    font-size: 50px;
+    font-weight: 500;
+    color: var(--heading-color);
+    text-align: left;
+}
+.mytitle04 {
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--heading-color);
+    text-align: left;
+}
+.mytitle05 {
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--action-btn-hover-bg);
+    text-align: center;
+}

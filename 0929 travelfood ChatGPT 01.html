@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地方美食資料練習</title>
+    <link rel="stylesheet" href="css/mycss01.css">
+
+    <style>
+        :root {
+            --body-bg: #f5eee6;
+            --wrapper-bg: #fffaf5;
+            --content-bg: #ead8c5;
+            --card-bg: #fffdf9;
+
+            --primary-color: #8b5e3c;
+            --secondary-color: #a97852;
+            --accent-color: #c49a6c;
+
+            --title-color: #68452f;
+            --text-color: #5f5147;
+            --light-text: #8b7a6c;
+
+            --border-color: #e2cdb8;
+
+            --shadow-color: rgba(105, 76, 54, 0.15);
+            --shadow-hover: rgba(105, 76, 54, 0.25);
+
+            --radius: 14px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            font-family:
+                "Noto Sans TC",
+                "Microsoft JhengHei",
+                Arial,
+                sans-serif;
+
+            min-height: 100vh;
+            padding: 30px 0 50px;
+        }
+
+        /* 網頁主標題 */
+        .mytitle01 {
+            color: var(--title-color);
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 8px;
+
+            margin-bottom: 25px;
+
+            text-shadow: 1px 2px 3px rgba(105, 76, 54, 0.15);
+        }
+
+        /* 主要內容區 */
+        .wrapper {
+            width: 1024px;
+            margin: 0 auto;
+
+            padding: 25px;
+
+            background-color: var(--wrapper-bg);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 8px 25px var(--shadow-color);
+
+            overflow: hidden;
+        }
+
+        /* 美食卡片 */
+        .demo {
+            text-align: center;
+
+            width: 32%;
+
+            margin: 0 1% 25px 0;
+
+            float: left;
+
+            background-color: var(--card-bg);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 15px var(--shadow-color);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        /* 滑鼠移過卡片 */
+        .demo:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 12px 25px var(--shadow-hover);
+        }
+
+        /* 圖片 */
+        .demo .logo {
+            width: 100%;
+            height: 220px;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        /* 店名 */
+        .mytitle02 {
+            color: var(--primary-color);
+
+            font-size: 20px;
+            font-weight: 700;
+
+            padding: 18px 12px 8px;
+
+            line-height: 1.6;
+        }
+
+        /* 電話 */
+        .mytitle04 {
+            color: var(--light-text);
+
+            font-size: 16px;
+
+            padding: 0 12px 18px;
+
+            line-height: 1.6;
+        }
+
+        /* 其他文字 */
+        .mytitle05 {
+            color: var(--secondary-color);
+
+            font-size: 18px;
+            font-weight: 600;
+
+            padding: 8px 12px;
+        }
+
+        /* RWD：平板 */
+        @media screen and (max-width: 1024px) {
+
+            body {
+                padding: 20px 0 40px;
+            }
+
+            .wrapper {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .demo {
+                width: 48%;
+                margin-right: 2%;
+            }
+
+            .mytitle01 {
+                font-size: 36px;
+            }
+        }
+
+        /* RWD：手機 */
+        @media screen and (max-width: 600px) {
+
+            body {
+                padding: 15px 0 30px;
+            }
+
+            .mytitle01 {
+                font-size: 30px;
+                letter-spacing: 5px;
+                margin-bottom: 18px;
+            }
+
+            .wrapper {
+                width: 94%;
+                padding: 15px;
+            }
+
+            .demo {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .demo .logo {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="display-1 fw-900 mytitle01">
+        地方美食
+    </div>
+
+    <div class="wrapper" id="foodlist">
+
+        <div class="demo">
+
+            <div class="logo bg-img"
+                style="background-image: url(images/img01.avif);">
+            </div>
+
+            <p class="mytitle05">123</p>
+            <p class="mytitle05">234</p>
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/TravelFood.js"></script>
+
+    <script>
+
+        console.log(food);
+
+        food.forEach(function (item) {
+
+            $("#foodlist").append(
+                '<div class="demo">' +
+                    '<div class="logo bg-img" ' +
+                        'style="background-image: url(' + item.PicURL + ');">' +
+                    '</div>' +
+
+                    '<p class="mytitle02">' +
+                        '店名：' + item.Name +
+                    '</p>' +
+
+                    '<p class="mytitle04">' +
+                        '電話：' + item.Tel +
+                    '</p>' +
+
+                '</div>'
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
