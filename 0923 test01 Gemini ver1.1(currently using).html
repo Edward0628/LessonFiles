@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01. 使用CSS語法配置版面</title>
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        * {
+            /* 預設全部內定距離取消 */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--body-bg);
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin-top: 0px;
+            /* margin外距 */
+            margin-bottom: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo {
+            width: 1024px;
+            height: 300px;
+            background-color: #4b4b4b;
+            background-image: url(images/img07.avif);
+        }
+
+        .nav {
+            background-color: var(--nav-bg);
+            /* text-align: center 位置置中 */
+            text-align: center;
+            padding-top: 18px;
+            padding-bottom: 20px;
+        }
+
+        .nav ul {
+            /* display: inline-block橫向顯示 */
+            display: inline-block;
+        }
+
+        .nav ul li {
+            /* flaot對齊 list-style-type開頭標示 */
+            float: left;
+            list-style-type: none;
+        }
+
+        .nav ul li a {
+            /* text-decoration底線 */
+            text-decoration: none;
+            background-color: var(--btn-dark-bg);
+            color: #eedbd0;
+            /* padding內距 */
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 50px;
+            padding-right: 50px;
+            margin-left: 2px;
+            margin-right: 2px;
+            /* border-radius圓滑四角 */
+            border-radius: 5px;
+            /* box-shadow陰影 */
+            box-shadow: 0px 1px 5px 1px #2f2219;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        /* 滑鼠游標懸停改變外觀 */
+        .nav ul li a:hover {
+            background-color: #bba799;
+            color: #2e1f14;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 50px;
+            padding-right: 50px;
+            box-shadow: 2px 2px 2px 2px #bba799;
+            border-radius: 8px;
+        }
+
+        .content {
+            background-color: var(--content-bg);
+            color: var(--text-main);
+            padding: 30px 50px;
+            font-size: 18px;
+        }
+
+
+        .content p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .content a {
+            display: block;
+            background-color: var(--text-main);
+            text-align: center;
+            width: 150px;
+            height: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            color: var(--btn-orange-text);
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0px 3px 5px 1px #2e1f14;
+            border-radius: 5px;
+        }
+
+        .content a:hover {
+            background-color: #d6b7a6;
+            color: #b5531b;
+            padding: 0px 2px;
+            border-radius: 7px;
+            box-shadow: 0px 4px 6px 2px var(--content-bg);
+        }
+
+        .footer {
+            background-color: var(--footer-bg);
+            padding: 5px 0px;
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 15px;
+        }
+
+        /* 響應式RWD */
+        @media screen and (max-width: 1024px) {
+            .wrapper {
+                width: 95%;
+            }
+
+            .logo {
+                width: 100%;
+                height: 120px;
+                background-image: url(images/img07.avif);
+            }
+
+            .nav ul {
+                display: block;
+            }
+
+            .nav ul li {
+                float: none;
+            }
+
+            .nav ul li a {
+                display: block;
+                margin-bottom: 7px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .content h1 {
+                font-size: 60px;
+            }
+
+            .content p {
+                margin-left: 30px;
+                margin-right: 30px;
+                font-size: 25px;
+            }
+
+            .content a {
+                padding: 20px 30px;
+                font-size: 35px;
+            }
+        }
+
+        /* ============================= */
+        /* 手機版 Web App RWD */
+        /* max-width: 600px */
+        /* ============================= */
+        @media screen and (max-width: 600px) {
+
+            body {
+                background-color: var(--content-bg);
+            }
+
+            .wrapper {
+                width: 100%;
+                margin: 0;
+            }
+
+            /* Logo */
+            .logo {
+                width: 100%;
+                height: 180px;
+                background-image: url(images/img07.avif);
+                background-position: center;
+                background-size: cover;
+            }
+
+            /* 導覽列 */
+            .nav {
+                background-color: var(--content-bg);
+                padding: 10px 15px;
+            }
+
+            .nav ul {
+                display: block;
+                width: 100%;
+            }
+
+            .nav ul li {
+                float: none;
+                width: 100%;
+            }
+
+            .nav ul li a {
+                display: block;
+                box-sizing: border-box;
+                width: 100%;
+                margin: 6px 0;
+                padding: 12px 15px;
+                background-color: var(--btn-dark-bg);
+                color: var(--text-main);
+                border-radius: 10px;
+                box-shadow: none;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            /* 手機版 hover */
+            .nav ul li a:hover {
+                background-color: var(--heading-color);
+                color: var(--btn-dark-bg);
+                padding: 12px 15px;
+                border-radius: 10px;
+                box-shadow: none;
+            }
+
+            /* 內容區 */
+            .content {
+                background-color: var(--content-bg);
+                color: var(--text-main);
+                padding: 30px 20px;
+                font-size: 16px;
+            }
+
+            .content h1 {
+                color: var(--heading-color);
+                font-size: 36px;
+                padding-bottom: 20px;
+            }
+
+            .content p {
+                margin: 15px 0;
+                font-size: 18px;
+                line-height: 1.8;
+            }
+
+            /* 了解更多按鈕 */
+            .content a {
+                width: 80%;
+                height: auto;
+                padding: 12px 10px;
+                margin: 30px auto 10px;
+                background-color: var(--heading-color);
+                color: var(--btn-dark-bg);
+                border-radius: 10px;
+                box-shadow: none;
+                font-size: 18px;
+            }
+
+            .content a:hover {
+                background-color: var(--text-main);
+                color: var(--btn-dark-bg);
+                padding: 12px 10px;
+                border-radius: 10px;
+                box-shadow: none;
+            }
+
+            /* Footer */
+            .footer {
+                background-color: var(--btn-dark-bg);
+                color: var(--text-muted);
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="banner">
+            <div class="logo bg-img"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">合作店家</a></li>
+                    <li><a href="#">關於我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1 class="mytitle01">
+                歡迎光臨
+            </h1>
+            <h2 class="mytitle02">
+                Welcome!
+            </h2>
+            <p class="fw-500">
+                網際網路更新專家讓人力量排行榜對面師傅四個物品選項天下，出生硬盤大多用戶名配合也許您現在操作同志，找不到隨便兩次寬頻，歡迎光臨可見報告很大，歡迎外掛證券交流分別浙江難以當情屏幕無論，大家沒有什麼禁止分鐘引用世界上消費者不行後面，預防表明，支持教學，一道認。
+            </p>
+            <p class="fw-400">
+                空調夫妻反映男性引發最好自我太陽預計可愛電視台，工作然而網易你想工藝消費歐美接着，沒有什麼確定電器你要如此做法，舉辦選項公斤清晰期間走到對此電池常用無門同時警察，另一個知道一看專用似乎告知這一更大尤其是窗口，考生壓力內存，又有緊緊承擔暴力網頁班提高以上很。
+            </p>
+            <p><a href="#">了解更多</a></p>
+        </div>
+        <div class="footer">
+            <p>
+                最近請大家將來告知，明確貨幣飯店吃了隨。
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

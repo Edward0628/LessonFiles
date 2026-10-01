@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript語法簡介</title>
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        /* CSS語法 */
+    </style>
+</head>
+
+<body>
+    <!-- HTML語法 1-4原生 5-8jquery 9for迴圈 -->
+    <p class="mytitle01" id="demo01">JavaScript 練習</p>
+    <p class="mytitle02" id="demo02">JavaScript 練習</p>
+    <p class="mytitle03" id="demo03">JavaScript 練習</p>
+    <p class="mytitle04" id="demo04">JavaScript 練習</p>
+    <p class="mytitle01" id="demo05">JavaScript 練習</p>
+    <p class="mytitle02" id="demo06">JavaScript 練習</p>
+    <p class="mytitle03" id="demo07">JavaScript 練習</p>
+    <p class="mytitle04" id="demo08">JavaScript 練習</p>
+    <div id="demo09"></div>
+    <p class="mytitle01" id="demo10"></p>
+    <div id="demo11">
+        <p class="mytitle04">使用forEach顯示廠牌加上序號</p>
+    </div>
+    <!-- 顯示每人的基本資料
+    1.姓名 年齡?歲 居住於?? 性別為?? 職業為?? -->
+    <div id="demo12">
+        <p class="mytitle02">人員基本資料</p>
+    </div>
+
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        // JavaScript原生語法
+        document.getElementById("demo01").innerHTML = "Hello World!";
+        document.getElementById("demo02").innerHTML = "Goodnight World...";
+        document.getElementById("demo03").innerHTML = "All Around The World?";
+        document.getElementById("demo04").innerHTML = "U R My Whole World~";
+
+        // jquery語法: .  class # id
+        $("#demo05").html("Beauty And A Beat")
+        $("#demo06").html("Show U Off");
+        $("#demo07").html("Tonight I wanna Show U Off");
+        $("#demo08").html("Ayy Ayy Ayy");
+
+        // for迴圈
+        // i++ i=i+1
+        for (i = 1; i < 11; i++) {
+            console.log(i + ": SUP HOMIE!");
+        }
+
+        // 二維迴圈
+        for (i = 1; i < 11; i++) {
+            for (j = 1; j < 11; j++) {
+                console.log(i + " x " + j + " = " + i * j);
+            }
+        }
+
+        // 堆疊迴圈
+        for (i = 0; i < 5; i++) {
+            $("#demo09").append('<p class="mytitle01">This Is Sempiternal!!</p>');
+        }
+
+        // 圖片
+        for (i = 0; i < 10; i++) {
+            $("#demo10").append('<img src="images/img01.avif"width="600px">')
+        }
+
+        // 陣列 Array
+        const cars = [
+            "TOYOTA",
+            "VOLKSWAGEN",
+            "FORD",
+            "HYUNDAI",
+            "BYD",
+            "HONDA",
+            "NISSAN",
+            "KIA",
+            "CHEVROLET",
+            "GEELY",
+            "BMW",
+            "MERCEDES-BENZ",
+            "MARUTI SUZUKI",
+            "TESLA",
+            "AUDI",
+            "SUZUKI",
+            "RENAULT",
+            "FIAT",
+            "MAZDA",
+            "PEUGEOT"
+        ];
+        console.log(cars);
+        console.log(cars[0]);
+        console.log(cars[1]);
+        console.log(cars[2]);
+
+        // 題目: 使用for迴圈將陣列內容cars印出來
+        for (i = 0; i < 20; i++) {
+            console.log(cars[i]);
+        }
+
+        // 使用length讀取未知數量之陣列
+        for (i = 0; i < cars.length; i++) {
+            console.log(cars[i]);
+        }
+
+        // 使用forEach讀取陣列 item為項目 index為索引
+        cars.forEach(function (index, item) {
+            console.log(index);
+            console.log(item);
+        });
+
+        // 題目 顯示品牌並加上序號
+        // 1:TOYOTA
+        // 2:VOLKSWAGEN
+        cars.forEach(function (item, index) {
+            $("#demo11").append('<p class="mytitle05">' + index + ': ' + item + '</p > ');
+        });
+
+        // JSON格式array [object, object, object]
+        const persons = [
+            {
+                "name": "Neil",
+                "age": "27",
+                "city": "臺中市",
+                "gender": "男",
+                "occupation": "工程師",
+                "email": "neil.dev@example.com"
+            },
+            {
+                "name": "Dabby",
+                "age": "28",
+                "city": "臺中市",
+                "gender": "女",
+                "occupation": "設計師",
+                "email": "dabby.design@example.com"
+            },
+            {
+                "name": "Min",
+                "age": "28",
+                "city": "臺北市",
+                "gender": "男",
+                "occupation": "行銷專員",
+                "email": "min.marketing@example.com"
+            },
+            {
+                "name": "Amber",
+                "age": "25",
+                "city": "高雄市",
+                "gender": "女",
+                "occupation": "教師",
+                "email": "amber.teach@example.com"
+            },
+            {
+                "name": "Chris",
+                "age": "32",
+                "city": "新北市",
+                "gender": "男",
+                "occupation": "專案經理",
+                "email": "chris.pm@example.com"
+            },
+            {
+                "name": "Fiona",
+                "age": "30",
+                "city": "桃園市",
+                "gender": "女",
+                "occupation": "會計師",
+                "email": "fiona.acc@example.com"
+            },
+            {
+                "name": "Gary",
+                "age": "29",
+                "city": "臺南市",
+                "gender": "男",
+                "occupation": "廚師",
+                "email": "gary.chef@example.com"
+            },
+            {
+                "name": "Hannah",
+                "age": "26",
+                "city": "新竹市",
+                "gender": "女",
+                "occupation": "護理師",
+                "email": "hannah.nurse@example.com"
+            },
+            {
+                "name": "Ivan",
+                "age": "35",
+                "city": "臺中市",
+                "gender": "男",
+                "occupation": "數據分析師",
+                "email": "ivan.data@example.com"
+            },
+            {
+                "name": "Judy",
+                "age": "31",
+                "city": "臺北市",
+                "gender": "女",
+                "occupation": "人資專員",
+                "email": "judy.hr@example.com"
+            }
+        ];
+        console.log(persons);
+        persons.forEach(function (item, index) {
+            console.log(item);
+            console.log(item.name);
+            console.log(item.age);
+            console.log(item.city);
+            console.log(item.gender);
+            console.log(item.occupation);
+        });
+        // 顯示基本資料
+        persons.forEach(function (item, index) {
+            $("#demo12").append('<p class="mytitle05"> ' + '編號' + index + '， ' + '姓名:' + item.name + '， ' + '年齡:' + item.age + '歲' + '， ' + '居住地:' + item.city + '， ' + '職業:' + item.occupation + '</p> ')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML與css基礎語法</title>
+    <!-- CSS設計 -->
+    <!-- shift+alt+f 自動排版 -->
+    <style>
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(200, 150, 100);
+        }
+
+        /* 內文改顏色 style使用.+名稱+{} 內文於p內使用class="名稱" */
+        .mytext01 {
+            font-size: 16px;
+            font-weight: lighter;
+            color: rgb(65, 0, 0);
+        }
+
+        .mytext02 {
+            font-size: 14px;
+            font-weight: inherit;
+            color: rgba(200, 200, 200, 50);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 註解使用方式 ctrl+/ -->
+    <!-- p段落 tab快速選擇 -->
+    <p></p>
+    <!-- p+*+數字 產生複數段落 如p+2 -->
+    <p></p>
+    <p></p>
+
+    <!-- h 標題 -->
+    <h1>標題1</h1>
+    <h2>標題2</h2>
+
+    <!-- ctlorem 甲文產生器 預設128字 -->
+    <p class="mytext01">
+        祝福更為學者實際採訪他人就能微微，分享一聲，對手財經，會員市政府兄弟患者不想經濟發展創業他對，語音全面驅動觀點勞動本站審核總是百度製作收入多麼鈴聲下載責任，業績個人靈魂電信聽說，成員我是光臨是有試試筆者歐洲壓縮遺憾上去推薦一週傳說公告你是，世界上兩位，民。
+    </p>
+    <!-- ctlorem+數字 產生指定字數 如10字 -->
+    <p class="mytext02">需要前往成果家電一。</p>
+    <!-- 多段落加甲文各20字 -->
+    <p>一切都第二章至今是誰，看來名字暫時推進。</p>
+    <p>一切都第二章至今是誰，看來名字暫時推進。</p>
+    <p>一切都第二章至今是誰，看來名字暫時推進。</p>
+    <p>一切都第二章至今是誰，看來名字暫時推進。</p>
+    <p>一切都第二章至今是誰，看來名字暫時推進。</p>
+
+    <!-- img 圖片 src來源 width大小 用px像素 -->
+    <p><img src="images/img01.avif" alt="" width="800px"></p>
+    <p><img src="images/img02.avif" alt="" width="600px"></p>
+    <p><img src="images/img03.avif" alt="" width="400px"></p>
+    <!-- 複數圖片亦可用img+*+數字 如img*2 -->
+    <img src="images/img04.avif" width="400" alt="">
+    <img src="images/img05.avif" width="400" alt="">
+
+    <!-- a 超連結 預設為覆蓋頁面 使用target="_blank"開啟新頁面 -->
+    <p><a href="https://tw.yahoo.com/" target="_blank">Yahoo</a></p>
+
+    <!-- 測驗1 圖片加超連結 -->
+    <p>
+        <a href="https://unsplash.com/" target="_blank">
+            <img src="images/img06.avif" width="400px" alt="">
+        </a>
+    </p>
+
+</body>
+
+</html>
