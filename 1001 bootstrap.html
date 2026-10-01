@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col">
+            <div class="col">
                 <div class="card p-2">
                     <img src="images/img04.avif" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -80,7 +80,7 @@
                         </p>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <ul class="nav justify-content-center">
@@ -102,6 +102,7 @@
     <script src="js/TravelFood.js"></script>
     <script>
         console.log(food);
+        $("#foodlist").empty();
         food.forEach(function (item) {
             const strHTML = `
                 <div class="col">
@@ -109,7 +110,7 @@
                         <img src="${item.PicURL}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <div class="display-6 fw-900 text-center">${item.Name}</div>
-                            <div class="h5 text-left">地址:${item.Address}</div>
+                            <div class="h5 text-left">地址:${item.City}${item.Town}${item.Address}</div>
                             <div class="h5 text-end">"電話:${item.Tel}":</div>
                             <p class="card-text text-truncate">${item.FoodFeature}</p>
                         </div>
