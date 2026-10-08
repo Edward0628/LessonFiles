@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opendata地方美食table練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        :root {
+            --orange-bg: #fffaf5;
+            --orange-lightest: #fffdf9;
+            --orange-light: #fff6ed;
+            --orange-soft: #fcebdc;
+            --orange-main: #f2b88f;
+            --orange-dark: #e9a476;
+            --orange-deep: #c9855d;
+            --orange-border: #f0d0b7;
+            --orange-text: #795c4b;
+            --orange-white: #fffefd;
+            --orange-shadow: rgba(210, 145, 105, 0.12);
+        }
+
+        body {
+            background-color: var(--orange-bg);
+            color: var(--orange-text);
+        }
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        .display-2 {
+            color: var(--orange-deep);
+            font-weight: 900;
+            text-shadow: 1px 2px 4px var(--orange-shadow);
+            background-color: var(--orange-light);
+            border-left: 6px solid var(--orange-main);
+            border-right: 6px solid var(--orange-main);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .table-rwd {
+            background-color: var(--orange-white);
+            border: 2px solid var(--orange-border);
+            box-shadow: 0 5px 15px var(--orange-shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table-rwd thead {
+            background-color: var(--orange-main) !important;
+            color: white;
+        }
+
+        .table-rwd thead th {
+            background-color: var(--orange-main) !important;
+            color: white;
+            border-color: var(--orange-dark);
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 900;
+            padding: 15px;
+        }
+
+        .table-rwd tbody {
+            background-color: var(--orange-white);
+        }
+
+        .table-rwd tbody tr {
+            transition: 0.3s;
+        }
+
+        .table-rwd tbody tr:nth-child(even) {
+            background-color: var(--orange-lightest);
+        }
+
+        .table-rwd tbody tr:hover {
+            background-color: var(--orange-soft);
+            transform: scale(1.005);
+            box-shadow: 0 3px 10px var(--orange-shadow);
+        }
+
+        .table-rwd tbody td {
+            color: var(--orange-text);
+            border-color: var(--orange-border);
+            vertical-align: middle;
+            padding: 12px;
+        }
+
+        .table-rwd tbody td img {
+            border: 3px solid var(--orange-soft);
+            border-radius: 12px;
+            box-shadow: 0 3px 8px var(--orange-shadow);
+            transition: 0.3s;
+        }
+
+        .table-rwd tbody td img:hover {
+            border-color: var(--orange-main);
+            transform: scale(1.03);
+        }
+
+        @media screen and (max-width: 768px) {
+            .table-rwd {
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            .table-rwd thead {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                border: 2px solid var(--orange-border);
+                border-radius: 15px;
+                background-color: var(--orange-white);
+                margin-bottom: 20px;
+                padding: 10px;
+                box-shadow: 0 5px 12px var(--orange-shadow);
+                transition: 0.3s;
+            }
+
+            .table-rwd tbody tr:hover {
+                background-color: var(--orange-light);
+                transform: translateY(-3px);
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+                border: none;
+                border-bottom: 1px dashed var(--orange-border);
+                padding: 12px 5px;
+                background-color: transparent;
+            }
+
+            .table-rwd tbody tr td:last-child {
+                border-bottom: none;
+            }
+
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)":";
+                font-size: 20px;
+                font-weight: 900;
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 15px;
+                color: var(--orange-deep);
+            }
+
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+                color: var(--orange-text);
+            }
+
+            .table-rwd tbody tr td img {
+                max-width: 100%;
+                height: auto;
+                border: 3px solid var(--orange-soft);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-2 fw-900 text-center my-4">地方美食餐廳列表</div> <!-- dp2大標題 fw900粗字體 tc水平置中 my4外距y軸 -->
+        <table class="table table-striped table-bordered table-hover table-sm table-rwd">
+            <!-- t-s條狀橫列 t-b外框 t-h滑鼠懸停 t-sm緊湊 t-r自訂響應式 -->
+            <thead class="table-dark">
+                <tr>
+                    <th width="10%">餐廳名稱</th>
+                    <th width="10%">餐廳圖片</th>
+                    <th width="10%">餐廳地址</th>
+                    <th width="10%">餐廳電話</th>
+                    <th width="10%">餐廳信箱</th>
+                    <th width="10%">餐廳簡介</th>
+                </tr>
+            </thead>
+            <tbody id="mytbody">
+                <tr>
+                    <td data-th="餐廳名稱"><span>xxxx</span></td>
+                    <td data-th="餐廳圖片"><span><img src="images/img01.avif" class="img-fluid" alt=""></span></td>
+                    <td data-th="餐廳地址"><span>xxxx</span></td>
+                    <td data-th="餐廳電話"><span>xxxx</span></td>
+                    <td data-th="餐廳信箱"><span>xxxx</span></td>
+                    <!-- cls=t-t 略過多字 -->
+                    <td data-th="餐廳簡介"><span class="text-truncate" style="max-width: 450px; display: block;">試題性感男人如有被人，玩具懂得這麼多他對因而青春明顯過了婚姻動態大學著名，農村目前，性質結果大哥更新時間女子草魚全家抱著不然，江湖有關瞬間出現在草魚指出和諧女孩子精華賓館產業空中只能必然，地說基金大學很少網易在我男人儘管開心一段時間計算，動態轉移見到報價本文內存等待主義步驟看了隱藏版聯合那麼多點點，從來沒當中人物輕易狀態輕易容量，部隊上了還能想要旁邊促進事故加強我要因為經銷商實施只見聯合，笑着把。</span></td>
+                </tr>
+                <!-- <tr>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                </tr>
+                <tr>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                    <td>xxxx</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        // 主程式: 開始必定執行的地方
+        $(function () {
+            // AJAX抓取外部資料:農村地方美食小吃特色料理
+            $.ajax({
+                type: "GET",
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                dataType: "json",
+                success: showdata, // 成功的話執行自訂副程式showdata
+                error: function () {
+                    console.log("抓取外部-農村地方美食小吃特色料理-資料失敗")
+                },
+            });
+        });
+
+        // 自訂函式 副程式 成功執行
+        function showdata(data) {
+            // 成功的話將資料呈現於console
+            console.log(data);
+            data.forEach(function (item) {
+                console.log(item.Name);
+                const strHTML =
+                    `<tr>
+                        <td data-th="餐廳名稱">
+                            <span>${item.Name}</span>
+                        </td>
+                        <td data-th="餐廳圖片">
+                            <span>
+                                <img src="${item.PicURL}" class="img-fluid" alt="">
+                            </span>
+                        </td>
+                        <td data-th="餐廳地址">
+                            <span>${item.City}${item.Town}${item.Address}</span>
+                        </td>
+                        <td data-th="餐廳電話">
+                            <span>${item.Tel}</span>
+                        </td>
+                        <td data-th="餐廳信箱">
+                            <span>${item.Email}</span>
+                        </td>
+                        <td data-th="餐廳簡介" text-truncate>
+                            <span class="text-truncate" style="max-width: 450px; display: block;">${item.FoodFeature}</span>
+                        </td>
+                    </tr>`;
+                $("#mytbody").append(strHTML)
+            })
+        }
+    </script>
+</body>
+
+</html>

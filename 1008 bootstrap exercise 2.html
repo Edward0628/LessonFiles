@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap切版練習2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box01 {
+            height: 180px;
+            background-image: url(images/img01.avif);
+        }
+
+        .box02 {
+            height: 120px;
+        }
+
+        .box03 {}
+
+        .box04 {
+            height: 50px;
+        }
+
+        @media screen and (min-width:992px) {
+            .box02 {
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                line-height: 200%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="box01 d-sm-none d-md-block bg-img"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="box02 bg-success mt-3 fw-900 display-5 text-center pt-4">選單1</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="box02 bg-success mt-3 fw-900 display-5 text-center pt-4">選單2</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="box02 bg-success mt-3 fw-900 display-5 text-center pt-4">選單3</div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="box02 bg-success mt-3 fw-900 display-5 text-center pt-4">選單4</div>
+            </div>
+        </div>
+        <div class="row" id="travelfood-list">
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">名字:xxx</div>
+                    <div class="h4">地址:xxx</div>
+                    <div class="h4">電話:xxx</div>
+                    <div class="h4">簡介:xxx</div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">標題</div>
+                    <p>本來如今周圍形式，留言板，角色到我較大一天污染也有感覺到交流都不寵物天地搭配內地福州，正式本頁谷歌無線面臨畢業生職務自主，性感我想，手指活力衣服，電源據說較高簡直盯着交通一般民國病人尤其山西太麻里必須，不再關鍵字，哪些傳奇，警察批評的說我是公斤上網演出老。</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">標題</div>
+                    <p>本來如今周圍形式，留言板，角色到我較大一天污染也有感覺到交流都不寵物天地搭配內地福州，正式本頁谷歌無線面臨畢業生職務自主，性感我想，手指活力衣服，電源據說較高簡直盯着交通一般民國病人尤其山西太麻里必須，不再關鍵字，哪些傳奇，警察批評的說我是公斤上網演出老。</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">標題</div>
+                    <p>本來如今周圍形式，留言板，角色到我較大一天污染也有感覺到交流都不寵物天地搭配內地福州，正式本頁谷歌無線面臨畢業生職務自主，性感我想，手指活力衣服，電源據說較高簡直盯着交通一般民國病人尤其山西太麻里必須，不再關鍵字，哪些傳奇，警察批評的說我是公斤上網演出老。</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">標題</div>
+                    <p>本來如今周圍形式，留言板，角色到我較大一天污染也有感覺到交流都不寵物天地搭配內地福州，正式本頁谷歌無線面臨畢業生職務自主，性感我想，手指活力衣服，電源據說較高簡直盯着交通一般民國病人尤其山西太麻里必須，不再關鍵字，哪些傳奇，警察批評的說我是公斤上網演出老。</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-4">
+                <div class="box03 mt-3">
+                    <img src="images/img02.avif" class="img-fluid" alt="">
+                    <div class="h4 fw-900 text-center mt-3">標題</div>
+                    <p>本來如今周圍形式，留言板，角色到我較大一天污染也有感覺到交流都不寵物天地搭配內地福州，正式本頁谷歌無線面臨畢業生職務自主，性感我想，手指活力衣服，電源據說較高簡直盯着交通一般民國病人尤其山西太麻里必須，不再關鍵字，哪些傳奇，警察批評的說我是公斤上網演出老。</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-12 d-none d-md-block bg-secondary py-3">
+                <div class="box04 text-center fw-300 display-6">Power By YC.inc</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function () {
+            // 介接資料
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/travelfood",
+                dataType: "json",
+                success: showdata,
+                error: function () {
+                    console.log("介接失敗");
+                    alert("介接失敗");
+                }
+            });
+        });
+        function showdata(data) {
+            console.log(data);
+            $("travelfood-list").empty();
+            data.forEach(function (item) {
+                const strHTML = `<div class="col-12 col-lg-6 col-xl-4">
+                            <div class="box03 mt-3">
+                                <img src="images/img02.avif" class="img-fluid" alt="">
+                                <div class="h4 fw-900 text-center mt-3">${item.Name}</div>
+                                <div class="h4">地址:${item.City}${item.Town}${item.Address}</div>
+                                <div class="h4">電話:${item.Tel}</div>
+                                <div class="h4">簡介:${item.HostWords}</div>
+                            </div>
+                        </div>`;
+                        $("#travelfood-list").append(strHTML);
+            });
+        }
+
+    </script>
+</body>
+
+</html>

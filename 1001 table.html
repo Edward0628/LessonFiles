@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - Table(表格)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .table-rwd thead {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin-top: 8px;
+                border: 5px solid var(--content-bg);
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+            }
+
+            /* 僞元素 */
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)": ";
+                font-size: medium;
+                font-weight: 600;
+                color: var(--text-muted);
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: left;
+                padding-right: 10px;
+            }
+
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-2 fw-900 text-center mt-4">飲料產品列表</div>
+
+        <table class="table mt-4 table-bordered table-striped table-hover table-sm table-rwd">
+            <thead>
+                <tr class="table-dark">
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success">
+                    <td data-th="產品編號"><span>01</span></td>
+                    <td data-th="產品名稱"><span>美式</span></td>
+                    <td data-th="產品價格"><span>60</span></td>
+                    <td data-th="產品數量"><span>10</span></td>
+                    <td data-th="產品備註"><span>次數一體時候頻率影音研發格式目前經過一年，貸款門口幾天化工害怕放下十年排行相對一遍登錄聲明，紡織網。</span></td>
+                </tr>
+                <tr class="table-primary">
+                    <td data-th="產品編號"><span>02</span></td>
+                    <td data-th="產品名稱"><span>拿鐵</span></td>
+                    <td data-th="產品價格"><span>100</span></td>
+                    <td data-th="產品數量"><span>15</span></td>
+                    <td data-th="產品備註"><span>半糖微冰</span></td>
+                </tr>
+                <tr class="table-danger">
+                    <td data-th="產品編號"><span>03</span></td>
+                    <td data-th="產品名稱"><span>卡布奇諾</span></td>
+                    <td data-th="產品價格"><span>120</span></td>
+                    <td data-th="產品數量"><span>5</span></td>
+                    <td data-th="產品備註"><span>微糖少冰</span></td>
+                </tr>
+                <tr class="table-info">
+                    <td data-th="產品編號"><span>04</span></td>
+                    <td data-th="產品名稱"><span>摩卡</span></td>
+                    <td data-th="產品價格"><span>80</span></td>
+                    <td data-th="產品數量"><span>20</span></td>
+                    <td data-th="產品備註"><span>半糖 熱</span></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
