@@ -82,19 +82,22 @@ body {
     text-align: center;
     color: #ad8e79;
 }
-.mytitle03{
+
+.mytitle03 {
     font-size: 36px;
     font-weight: 350;
     text-align: center;
     color: #ccc9c6;
 }
-.mytitle04{
+
+.mytitle04 {
     font-size: 28px;
     font-weight: 280;
     text-align: center;
     color: #6a6a6a;
 }
-.mytitle05{
+
+.mytitle05 {
     font-size: 20px;
     font-weight: 200;
     color: #000000;
@@ -104,4 +107,92 @@ body {
 .bg-img {
     background-position: center;
     background-size: cover;
+}
+
+/* roller圖層 */
+.roller-t {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-t .rollerbox-t {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 200, 200, .5);
+    transform: translateY(-100%);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-t:hover .rollerbox-t {
+    transform: translateY(0);
+}
+
+/* 下 */
+.roller-b {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-b .rollerbox-b {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 200, 200, .5);
+    transform: translateY(100%);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-b:hover .rollerbox-b {
+    transform: translateY(0);
+}
+
+/* 左 */
+.roller-l {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-l .rollerbox-l {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 200, 200, .5);
+    transform: translateX(-100%);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-l:hover .rollerbox-l {
+    transform: translateX(0);
+}
+
+/* 右 */
+.roller-r {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-r .rollerbox-r {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(200, 200, 200, .5);
+    transform: translateX(100%);
+    transition: transform 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roller-r:hover .rollerbox-r {
+    transform: translateX(0);
 }

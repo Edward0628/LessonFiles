@@ -1,27 +1,625 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>學習歷程首頁</title>
+    <title>學習歷程首頁｜Learning Portfolio</title>
     <link rel="stylesheet" href="css/mycss01.css">
+    <style>
+        /* ==============================
+   Global
+============================== */
+        :root {
+            --primary-color: #30241F;
+            --secondary-color: #49362C;
+            --accent-color: #80634B;
+            --highlight-color: #B89572;
+            --bg-light: #E8DCCB;
+            --bg-card: #F5EFE5;
+            --text-color: #49362C;
+            --border-color: #CBB9A4;
+            --shadow-color: rgba(48, 36, 31, .08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+        }
+
+        /* ==============================
+   Hero
+============================== */
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 380px;
+            padding: 70px 25px;
+            background:
+                linear-gradient(rgba(48, 36, 31, .88), rgba(48, 36, 31, .92)),
+                var(--primary-color);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-label {
+            color: var(--highlight-color);
+            font-size: .8rem;
+            letter-spacing: 6px;
+        }
+
+        .hero h1 {
+            color: var(--bg-card);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: 5px;
+            margin: 25px 0 18px;
+        }
+
+        .hero p {
+            color: #D4C1AB;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            line-height: 2;
+        }
+
+        .hero-line {
+            width: 55px;
+            height: 2px;
+            background-color: var(--highlight-color);
+            margin: 30px auto;
+        }
+
+        .hero-subtitle {
+            color: #CBB9A4;
+            font-size: .75rem;
+            letter-spacing: 3px;
+        }
+
+        /* ==============================
+   Main Portfolio
+============================== */
+        .portfolio {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 85px 25px 100px;
+        }
+
+        /* Section Heading */
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--accent-color);
+            font-size: .8rem;
+            letter-spacing: 4px;
+        }
+
+        .section-heading h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            letter-spacing: 3px;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: var(--accent-color);
+            font-size: .9rem;
+            letter-spacing: 1px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .work-count {
+            color: var(--accent-color);
+            font-size: .8rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        /* ==============================
+   Work Group
+============================== */
+        .work-group {
+            margin-bottom: 55px;
+        }
+
+        .group-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .group-number {
+            color: var(--highlight-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .group-heading h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .group-line {
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .group-count {
+            color: var(--accent-color);
+            font-size: .7rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* ==============================
+   Work Cards
+============================== */
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .work-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 125px;
+            padding: 25px;
+            background-color: var(--bg-card);
+            border: 1px solid transparent;
+            box-shadow: 0 5px 18px var(--shadow-color);
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .work-card:hover {
+            border-color: var(--highlight-color);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(48, 36, 31, .13);
+        }
+
+        .work-index {
+            color: var(--highlight-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 22px;
+        }
+
+        .work-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .work-category {
+            display: block;
+            color: var(--accent-color);
+            font-size: .65rem;
+            letter-spacing: 2px;
+            margin-bottom: 9px;
+        }
+
+        .work-info h4 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin: 0 0 8px;
+            transition: .3s ease;
+        }
+
+        .work-card:hover .work-info h4 {
+            color: var(--highlight-color);
+        }
+
+        .work-info p {
+            color: var(--accent-color);
+            font-size: .8rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .work-arrow {
+            color: var(--highlight-color);
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: .3s ease;
+        }
+
+        .work-card:hover .work-arrow {
+            transform: translate(3px, -3px);
+        }
+
+        /* Featured Project */
+        .work-card.featured {
+            border-color: var(--highlight-color);
+            background-color: #EFE3D3;
+        }
+
+        .featured-label {
+            color: var(--accent-color);
+            font-size: .65rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* ==============================
+   Footer
+============================== */
+        .footer {
+            padding: 45px 20px;
+            background-color: var(--primary-color);
+            text-align: center;
+        }
+
+        .footer>span {
+            color: var(--highlight-color);
+            font-size: .75rem;
+            letter-spacing: 4px;
+        }
+
+        .footer p {
+            color: var(--bg-card);
+            font-size: .9rem;
+            letter-spacing: 2px;
+            margin: 15px 0;
+        }
+
+        .footer small {
+            color: #BFAE9D;
+            font-size: .7rem;
+            letter-spacing: 1px;
+        }
+
+        /* ==============================
+   RWD
+============================== */
+        @media (max-width: 767.98px) {
+
+            .hero {
+                min-height: 320px;
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: 3px;
+            }
+
+            .hero p {
+                font-size: .9rem;
+            }
+
+            .portfolio {
+                padding: 55px 20px 70px;
+            }
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 1.7rem;
+            }
+
+            .work-group {
+                margin-bottom: 42px;
+            }
+
+            .group-heading {
+                gap: 10px;
+            }
+
+            .group-heading h3 {
+                font-size: .95rem;
+            }
+
+            .group-count {
+                font-size: .6rem;
+            }
+
+            .work-list {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .work-card {
+                min-height: 110px;
+                padding: 20px;
+            }
+
+            .work-index {
+                font-size: 1.2rem;
+                margin-right: 15px;
+            }
+
+            .work-info h4 {
+                font-size: .95rem;
+            }
+
+            .featured-label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .group-heading {
+                gap: 7px;
+            }
+
+            .group-heading h3 {
+                font-size: .85rem;
+            }
+
+            .group-count {
+                font-size: .55rem;
+            }
+
+            .work-card {
+                padding: 16px;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <div class="mytitle01">學習歷程筆記展示</div>
-    <ul>
-        <li><a href="0922.html" target="_blank" class="mytitle04">HTML & CSS 練習</a></li>
-        <li><a href="0923 test01 Gemini ver1.1(currently using).html" target="_blank" class="mytitle04">HTML & CSS 實作</a></li>
-        <li><a href="0924 javascript.html" target="_blank" class="mytitle04">JavaScript & Jquery 練習</a></li>
-        <li><a href="0929 travelfood ChatGPT 01.html" target="_blank" class="mytitle04">JSON 實作(opendata 地方餐廳)</a></li>
-        <li><a href="1001 bootstrap card travelfood.html" target="_blank" class="mytitle04">BootStrap 實作(opendata 地方餐廳)</a></li>
-        <li><a href="1001 table.html" target="_blank" class="mytitle04">Table課程檔案</a></li>
-        <li><a href="1006 bootstrap.html" target="_blank" class="mytitle04">Bootstrap切版課程檔案</a></li>
-        <li><a href="1006 bootstrap exercise 1.html" target="_blank" class="mytitle04">Bootstrap切版練習</a></li>
-        <li><a href="1006 table travelfood(ChatGPT).html" target="_blank" class="mytitle04">Table 實作(opendata 地方餐廳)</a></li>
-        <li><a href="1008 bootstrap exercise 2.html" target="_blank" class="mytitle04">Bootstrap JSON Server 東亞知名酒吧</a></li>
-        <li><a href="1008 flex.html" target="_blank" class="mytitle04">Flex 課程檔案</a></li>
-        <li><a href="1022 form exercise(ChatGPT).html" target="_blank" class="mytitle04">Form 報名表單練習 (ChatGPT)</a></li>
-    </ul>
-    
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-label">MY LEARNING JOURNEY</span>
+            <h1>學習歷程筆記展示</h1>
+            <p>從基礎語法到網頁實作，記錄每一次學習與成長。</p>
+            <div class="hero-line"></div>
+            <span class="hero-subtitle">HTML · CSS · JAVASCRIPT · BOOTSTRAP</span>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="portfolio">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">MY WORKS</span>
+                <h2>課程作品集</h2>
+                <p>以下整理了課程期間的練習、實作與專題作品。</p>
+            </div>
+            <span class="work-count">14 PROJECTS</span>
+        </div>
+
+        <!-- HTML & CSS -->
+        <section class="work-group">
+            <div class="group-heading">
+                <span class="group-number">01</span>
+                <h3>HTML & CSS</h3>
+                <span class="group-line"></span>
+                <span class="group-count">02 WORKS</span>
+            </div>
+
+            <div class="work-list">
+                <a href="0922.html" target="_blank" class="work-card">
+                    <span class="work-index">01</span>
+                    <div class="work-info">
+                        <span class="work-category">HTML / CSS</span>
+                        <h4>HTML & CSS 練習</h4>
+                        <p>網頁基礎結構與樣式練習</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="0923 test01 Gemini ver1.1(currently using).html" target="_blank" class="work-card">
+                    <span class="work-index">02</span>
+                    <div class="work-info">
+                        <span class="work-category">HTML / CSS</span>
+                        <h4>HTML & CSS 實作</h4>
+                        <p>網頁版面與視覺設計實作</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- JavaScript & JSON -->
+        <section class="work-group">
+            <div class="group-heading">
+                <span class="group-number">02</span>
+                <h3>JavaScript & JSON</h3>
+                <span class="group-line"></span>
+                <span class="group-count">02 WORKS</span>
+            </div>
+
+            <div class="work-list">
+                <a href="0924 javascript.html" target="_blank" class="work-card">
+                    <span class="work-index">03</span>
+                    <div class="work-info">
+                        <span class="work-category">JAVASCRIPT / JQUERY</span>
+                        <h4>JavaScript & JQuery 練習</h4>
+                        <p>互動功能與前端程式練習</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="0929 travelfood ChatGPT 01.html" target="_blank" class="work-card">
+                    <span class="work-index">04</span>
+                    <div class="work-info">
+                        <span class="work-category">JSON / OPENDATA</span>
+                        <h4>地方餐廳資料實作</h4>
+                        <p>運用 JSON 呈現地方餐廳 Open Data</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bootstrap -->
+        <section class="work-group">
+            <div class="group-heading">
+                <span class="group-number">03</span>
+                <h3>Bootstrap</h3>
+                <span class="group-line"></span>
+                <span class="group-count">05 WORKS</span>
+            </div>
+
+            <div class="work-list">
+                <a href="1001 bootstrap card travelfood.html" target="_blank" class="work-card">
+                    <span class="work-index">05</span>
+                    <div class="work-info">
+                        <span class="work-category">BOOTSTRAP / OPENDATA</span>
+                        <h4>地方餐廳 Card 實作</h4>
+                        <p>使用 Bootstrap Card 呈現餐廳資料</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1001 table.html" target="_blank" class="work-card">
+                    <span class="work-index">06</span>
+                    <div class="work-info">
+                        <span class="work-category">HTML TABLE</span>
+                        <h4>Table 課程檔案</h4>
+                        <p>表格結構與資料呈現練習</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1006 bootstrap.html" target="_blank" class="work-card">
+                    <span class="work-index">07</span>
+                    <div class="work-info">
+                        <span class="work-category">BOOTSTRAP</span>
+                        <h4>Bootstrap 切版課程</h4>
+                        <p>Bootstrap 網頁排版與元件應用</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1006 bootstrap exercise 1.html" target="_blank" class="work-card">
+                    <span class="work-index">08</span>
+                    <div class="work-info">
+                        <span class="work-category">BOOTSTRAP</span>
+                        <h4>Bootstrap 切版練習</h4>
+                        <p>響應式網頁版面實作</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1006 table travelfood(ChatGPT).html" target="_blank" class="work-card">
+                    <span class="work-index">09</span>
+                    <div class="work-info">
+                        <span class="work-category">TABLE / OPENDATA</span>
+                        <h4>地方餐廳 Table 實作</h4>
+                        <p>透過表格整理 Open Data 資料</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Flex & Form -->
+        <section class="work-group">
+            <div class="group-heading">
+                <span class="group-number">04</span>
+                <h3>Flex & Form</h3>
+                <span class="group-line"></span>
+                <span class="group-count">03 WORKS</span>
+            </div>
+
+            <div class="work-list">
+                <a href="1008 bootstrap exercise 2.html" target="_blank" class="work-card">
+                    <span class="work-index">10</span>
+                    <div class="work-info">
+                        <span class="work-category">BOOTSTRAP / JSON SERVER</span>
+                        <h4>東亞知名酒吧</h4>
+                        <p>結合 Bootstrap 與 JSON Server 實作</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1008 flex.html" target="_blank" class="work-card">
+                    <span class="work-index">11</span>
+                    <div class="work-info">
+                        <span class="work-category">CSS FLEXBOX</span>
+                        <h4>Flex 課程檔案</h4>
+                        <p>Flex 排版與元素配置練習</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1022 form exercise(ChatGPT).html" target="_blank" class="work-card">
+                    <span class="work-index">12</span>
+                    <div class="work-info">
+                        <span class="work-category">HTML FORM</span>
+                        <h4>Form 報名表單練習</h4>
+                        <p>表單欄位與使用者輸入介面設計</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- SPA -->
+        <section class="work-group">
+            <div class="group-heading">
+                <span class="group-number">05</span>
+                <h3>SPA Web Design</h3>
+                <span class="group-line"></span>
+                <span class="group-count">02 WORKS</span>
+            </div>
+
+            <div class="work-list">
+                <a href="1027 SPA (ChatGPT).html" target="_blank" class="work-card">
+                    <span class="work-index">13</span>
+                    <div class="work-info">
+                        <span class="work-category">SPA / BOOTSTRAP</span>
+                        <h4>SPA 課程檔案</h4>
+                        <p>單頁式網站架構與版面練習</p>
+                    </div>
+                    <span class="work-arrow">↗</span>
+                </a>
+
+                <a href="1105 SPA HW.html" target="_blank" class="work-card featured">
+                    <span class="work-index">14</span>
+                    <div class="work-info">
+                        <span class="work-category">FINAL PROJECT</span>
+                        <h4>LES SAISONS BISTRO</h4>
+                        <p>四季・法式小酒館｜單頁式品牌形象網站</p>
+                    </div>
+                    <span class="featured-label">FEATURED</span>
+                    <span class="work-arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span>MY LEARNING JOURNEY</span>
+        <p>每一次練習，都是向前的一步。</p>
+        <small>© 2026 Learning Portfolio</small>
+    </footer>
+
 </body>
+
 </html>
