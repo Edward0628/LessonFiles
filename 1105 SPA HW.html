@@ -1808,13 +1808,224 @@
                 margin-top: 10px;
             }
         }
+
+        /* ==============================
+   MEMBER MODAL 會員登入與註冊
+============================== */
+
+        /* Modal 外框 */
+        #registerModal .modal-dialog {
+            max-width: 760px;
+        }
+
+        #loginModal .modal-dialog {
+            max-width: 460px;
+        }
+
+        /* Modal 主體 */
+        #registerModal .modal-content,
+        #loginModal .modal-content {
+            background-color: #F5EFE5;
+            border: 1px solid #B89572;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(48, 36, 31, 0.2);
+        }
+
+        /* 標題區 */
+        #registerModal .modal-header,
+        #loginModal .modal-header {
+            background-color: #30241F !important;
+            color: #F5EFE5;
+            border-bottom: 1px solid #80634B;
+            padding: 20px 24px;
+        }
+
+        #registerModal .modal-title,
+        #loginModal .modal-title {
+            color: #F5EFE5;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        /* 內容區 */
+        #registerModal .modal-body,
+        #loginModal .modal-body {
+            padding: 28px;
+            color: #30241F;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* 註冊左側說明 */
+        #registerModal .col-md-5 {
+            background-color: #E8DCCB;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        #registerModal .col-md-5 h6 {
+            color: #30241F;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        #registerModal .col-md-5 p {
+            color: #49362C;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        /* 表單標籤 */
+        #registerModal .form-label,
+        #loginModal .form-label {
+            color: #49362C;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        /* 輸入框 */
+        #registerModal .form-control,
+        #loginModal .form-control {
+            background-color: #FFFFFF;
+            border: 1px solid #B89572;
+            border-radius: 6px;
+            padding: 11px 14px;
+            font-size: 14px;
+            color: #30241F;
+            transition: all 0.3s ease;
+        }
+
+        #registerModal .form-control::placeholder,
+        #loginModal .form-control::placeholder {
+            color: #B5A89B;
+            font-size: 13px;
+        }
+
+        /* 輸入框 Focus */
+        #registerModal .form-control:focus,
+        #loginModal .form-control:focus {
+            border-color: #80634B;
+            box-shadow: 0 0 0 3px rgba(128, 99, 75, 0.15);
+        }
+
+        /* 同意規範 */
+        #registerModal .form-check {
+            margin-top: 20px;
+        }
+
+        #registerModal .form-check-input {
+            border-color: #80634B;
+            cursor: pointer;
+        }
+
+        #registerModal .form-check-input:checked {
+            background-color: #49362C;
+            border-color: #49362C;
+        }
+
+        #registerModal .form-check-label {
+            color: #49362C;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* 按鈕區 */
+        #registerModal .modal-footer,
+        #loginModal .modal-footer {
+            background-color: #F5EFE5;
+            border-top: 1px solid #D8C5AE;
+            padding: 16px 24px;
+        }
+
+        /* 主要按鈕 */
+        #registerModal .btn-primary,
+        #loginModal .btn-primary {
+            background-color: #49362C;
+            border-color: #49362C;
+            color: #F5EFE5;
+            padding: 9px 24px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        #registerModal .btn-primary:hover,
+        #loginModal .btn-primary:hover {
+            background-color: #80634B;
+            border-color: #80634B;
+        }
+
+        /* 次要按鈕 */
+        #registerModal .btn-secondary,
+        #loginModal .btn-secondary {
+            background-color: transparent;
+            border-color: #B89572;
+            color: #49362C;
+            padding: 9px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #registerModal .btn-secondary:hover,
+        #loginModal .btn-secondary:hover {
+            background-color: #E8DCCB;
+            border-color: #80634B;
+        }
+
+        /* 登入與註冊切換連結 */
+        #registerModal .modal-footer a,
+        #loginModal .modal-footer a {
+            color: #80634B;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        #registerModal .modal-footer a:hover,
+        #loginModal .modal-footer a:hover {
+            color: #30241F;
+            text-decoration: underline !important;
+        }
+
+        /* 表單驗證提示 */
+        #registerModal .invalid-feedback,
+        #loginModal .invalid-feedback {
+            font-size: 12px;
+        }
+
+        /* 手機版 */
+        @media (max-width: 767.98px) {
+
+            #registerModal .modal-dialog,
+            #loginModal .modal-dialog {
+                margin: 12px;
+            }
+
+            #registerModal .modal-body,
+            #loginModal .modal-body {
+                padding: 20px;
+            }
+
+            #registerModal .col-md-5 {
+                margin-bottom: 8px;
+            }
+
+            #registerModal .modal-footer,
+            #loginModal .modal-footer {
+                padding: 14px 16px;
+            }
+
+        }
     </style>
 </head>
 
 <body>
     <!-- section 01 導覽列 -->
     <section id="s01">
-        <nav class="navbar navbar-expand-lg fixed-top bg-light wow animate__slideInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+        <nav class="navbar navbar-expand-lg fixed-top bg-light wow animate__slideInDown" data-wow-duration="2s"
+            data-wow-delay="0s" data-wow-iteration="1">
             <div class="container-fluid">
                 <!-- 手機版選單按鈕 -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -1838,39 +2049,42 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <h6>FOOD MENU｜餐點</h6>
-                                    <li><a class="dropdown-item" href="">精選主餐<span>Main Courses</span></a></li>
-                                    <li><a class="dropdown-item" href="">主廚推薦<span>Chef's Pick</span></a>
+                                    <li><a class="dropdown-item" href="#menu01">精選主餐<span>Main Courses</span></a></li>
+                                    <li><a class="dropdown-item" href="#menu02">主廚推薦<span>Chef's Pick</span></a>
                                     </li>
-                                    <li><a class="dropdown-item" href="">季節限定<span>Seasonal Menu</span></a></li>
-                                    <li><a class="dropdown-item" href="">精緻小點<span>Small Plates</span></a></li>
+                                    <li><a class="dropdown-item" href="#menu03">季節限定<span>Seasonal Menu</span></a></li>
+                                    <li><a class="dropdown-item" href="#menu04">精緻小點<span>Small Plates</span></a></li>
                                     <!-- 分隔線：區隔餐點與酒類 -->
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <h6>DRINK MENU｜酒水</h6>
-                                    <li><a class="dropdown-item" href="#">精選烈酒<span>Spirits</span></a></li>
-                                    <li><a class="dropdown-item" href="#">經典調酒<span>Cocktails</span></a></li>
-                                    <li><a class="dropdown-item" href="#">無酒精飲品<span>Non-Alcoholic</span></a></li>
+                                    <li><a class="dropdown-item" href="#drink01">精選烈酒<span>Spirits</span></a></li>
+                                    <li><a class="dropdown-item" href="#drink02">經典調酒<span>Cocktails</span></a></li>
+                                    <li><a class="dropdown-item" href="#drink03">無酒精飲品<span>Non-Alcoholic</span></a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#s09">精選相片<span>GALLERY</span></a>
+                                <a class="nav-link" href="#s12">精選相片<span>GALLERY</span></a>
                             </li>
                         </ul>
                         <!-- 中間品牌 Logo -->
-                        <a class="navbar-brand" href="#s02">
+                        <a class="navbar-brand" href="#">
                             <img src="images/SPA_HW/logo.png" alt="LES SAISONS">
                         </a>
                         <!-- 右半邊選單 -->
                         <ul class="navbar-nav navbar-right">
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#s14">線上訂位<span>BOOKING</span></a>
+                                <a class="nav-link" href="#s15">線上訂位<span>BOOKING</span></a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#s14">聯絡我們<span>CONTACT</span></a>
+                                <a class="nav-link" href="#s16">聯絡我們<span>CONTACT</span></a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#">會員登入<span>LOGIN</span></a>
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    會員登入<span>LOGIN</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -1892,7 +2106,7 @@
             <div class="carousel-inner">
                 <!-- 第一張 餐館外觀 active預設輪播 -->
                 <div class="carousel-item hero-slide-01 active">
-                    <img src="images/SPA_HW/carousel01.jpg" class="d-block w-100 bg-img" alt="...">
+                    <img src="images/SPA_HW/carousel01.jpg" class="d-block w-100 bg-img" alt="LES SAISONS">
                     <div class="hero-caption">
                         <h1>LES SAISONS</h1>
                         <h5>FRENCH BISTRO</h5>
@@ -1902,7 +2116,7 @@
                 </div>
                 <!-- 第二張 餐館內裝 -->
                 <div class="carousel-item hero-slide-02">
-                    <img src="images/SPA_HW/carousel02.jpg" class="d-block w-100 bg-img" alt="...">
+                    <img src="images/SPA_HW/carousel02.jpg" class="d-block w-100 bg-img" alt="A TASTE OF ART">
                     <div class="hero-caption">
                         <h2>A TASTE OF ART</h2>
                         <p>以料理，收藏每個季節的風味</p>
@@ -1910,7 +2124,7 @@
                 </div>
                 <!-- 第三張 餐點特寫 -->
                 <div class="carousel-item hero-slide-03">
-                    <img src="images/SPA_HW/carousel03.jpg" class="d-block w-100 bg-img" alt="...">
+                    <img src="images/SPA_HW/carousel03.jpg" class="d-block w-100 bg-img" alt="A SEASONAL JOURNEY">
                     <div class="hero-caption">
                         <h2>A SEASONAL JOURNEY</h2>
                         <p>品味四季的美好</p>
@@ -1974,17 +2188,20 @@
     <section id="s04">
         <div class="container py-5">
             <!-- 標題區 -->
-            <div class="text-center wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>OUR MENU</h5>
                 <h2>四季風味・餐點菜單</h2>
                 <p>從經典法式料理到當季特色餐點，細細品味每個季節的美好。</p>
             </div>
             <!-- 主餐 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 id="menu01">主餐</h3>
                 <p>MAIN COURSES</p>
                 <div class="menu-list">
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu01.jpg" class="card-img-top" alt="勃根地風味紅酒燉牛肉">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -1994,7 +2211,8 @@
                             <p class="card-text">以紅酒與香料慢火燉煮，讓牛肉充分吸收醇厚酒香，呈現柔嫩細緻的經典法式風味。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu02.jpg" class="card-img-top" alt="香料油封鴨腿">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2004,7 +2222,8 @@
                             <p class="card-text">以香料醃製後浸入鴨油慢煮，外皮煎至金黃酥脆，肉質柔嫩而富有層次。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu03.jpg" class="card-img-top" alt="香煎鵝肝">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2017,11 +2236,13 @@
                 </div>
             </div>
             <!-- 主廚推薦 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 id="menu02">主廚推薦</h3>
                 <p>CHEF'S PICKS</p>
                 <div class="menu-list">
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu04.jpg" class="card-img-top" alt="法式焗烤洋蔥湯">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2031,7 +2252,8 @@
                             <p class="card-text">將洋蔥以奶油慢炒至焦糖色，注入濃郁高湯，搭配焗烤起司與麵包，溫暖而迷人。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu05.jpg" class="card-img-top" alt="香蒜奶油焗蝸牛">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2041,7 +2263,8 @@
                             <p class="card-text">以蒜香奶油與新鮮香草調味，烘烤至香氣四溢，呈現經典法式小點的迷人滋味。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu06.jpg" class="card-img-top" alt="普羅旺斯馬賽魚湯">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2054,11 +2277,13 @@
                 </div>
             </div>
             <!-- 季節限定 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 id="menu03">季節限定</h3>
                 <p>SEASONAL MENU</p>
                 <div class="menu-list">
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu07.jpg" class="card-img-top" alt="香料馬鈴薯燉肉">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2068,7 +2293,8 @@
                             <p class="card-text">以馬鈴薯與肉品細火燉煮，融合香料與蔬菜的自然甜味，帶來溫暖樸實的家常風味。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu08.jpg" class="card-img-top" alt="薩瓦風味起司鍋">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2078,7 +2304,8 @@
                             <p class="card-text">融合多種法式乳酪加熱融化，搭配麵包與時令配料，享受濃郁滑順的起司香氣。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu09.jpg" class="card-img-top" alt="奶油白醬燉小牛肉">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2091,11 +2318,13 @@
                 </div>
             </div>
             <!-- 精緻小點 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 id="menu04">精緻小點</h3>
                 <p>SMALL PLATES</p>
                 <div class="menu-list">
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu10.jpg" class="card-img-top" alt="松露風味薯條">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2105,7 +2334,8 @@
                             <p class="card-text">金黃酥脆的薯條佐以松露香氣與細緻調味，簡單卻令人回味的餐桌小點。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu11.jpg" class="card-img-top" alt="經典法式舒芙蕾">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2115,7 +2345,8 @@
                             <p class="card-text">輕盈蓬鬆的蛋奶甜點，烘烤後呈現柔軟細緻的口感，帶來法式甜點的優雅魅力。</p>
                         </div>
                     </div>
-                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                    <div class="card menu-card wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                        data-wow-iteration="1">
                         <img src="images/SPA_HW/menu12.jpg" class="card-img-top" alt="法式奶油瑪德蓮">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -2133,14 +2364,16 @@
     <section id="s05">
         <div class="container py-5">
             <!-- 標題區 -->
-            <div class="text-center wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>OUR DRINKS</h5>
                 <h2>精選酒水・飲品菜單</h2>
                 <p>從經典酒款到創意調酒，探索每一杯飲品背後的故事與風味。</p>
             </div>
 
             <!-- 精選烈酒 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 class="mt-5" id="drink01">精選烈酒</h3>
                 <p>SELECTED SPIRITS</p>
                 <div class="menu-list">
@@ -2176,7 +2409,8 @@
             <hr class="menu-divider">
 
             <!-- 經典調酒 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 class="mt-5" id="drink02">經典調酒</h3>
                 <p>COCKTAILS</p>
                 <div class="menu-list">
@@ -2212,7 +2446,8 @@
             <hr class="menu-divider">
 
             <!-- 無酒精飲品 -->
-            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="menu-category wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h3 class="mt-5" id="drink03">無酒精飲品</h3>
                 <p>NON-ALCOHOLIC</p>
                 <div class="menu-list">
@@ -2249,17 +2484,20 @@
     <!-- section 06 主廚推薦 -->
     <section id="s06">
         <div class="container">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>CHEF'S SELECTION</h5>
                 <h2>主廚匠心・精選料理</h2>
                 <p>從經典法式技藝到細膩風味，呈現主廚對料理的熱情與堅持。</p>
             </div>
             <!-- 第一組：圖片左、文字右 -->
             <div class="row align-items-center">
-                <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <img src="images/SPA_HW/pick01.jpg" class="img-fluid" alt="香料油封鴨腿">
                 </div>
-                <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <h3>香料油封鴨腿</h3>
                     <h5>CONFIT DE CANARD</h5>
                     <p>以低溫油封工法慢火熟成，保留鴨肉的柔嫩與豐富油脂香氣，再將外皮煎至金黃酥脆。</p>
@@ -2267,10 +2505,12 @@
             </div>
             <!-- 第二組：文字左、圖片右 -->
             <div class="row align-items-center">
-                <div class="col-md-6 order-md-2 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 order-md-2 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <img src="images/SPA_HW/pick02.jpg" class="img-fluid" alt="法式焗烤洋蔥湯">
                 </div>
-                <div class="col-md-6 order-md-1 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 order-md-1 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <h3>法式焗烤洋蔥湯</h3>
                     <h5>FRENCH ONION SOUP</h5>
                     <p>將洋蔥慢炒至焦糖化，融入濃郁高湯，搭配烤麵包與融化起司，呈現溫暖醇厚的經典風味。</p>
@@ -2287,7 +2527,8 @@
     <!-- section 09 主廚介紹 -->
     <section id="s09">
         <div class="container">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>OUR CHEFS</h5>
                 <h2>主廚團隊</h2>
                 <p>以專業與熱情，呈現每一道料理的細膩風味。</p>
@@ -2296,7 +2537,8 @@
             <div class="row g-4">
 
                 <!-- 男主廚 -->
-                <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s09-card">
                         <div class="s09-imgbox">
                             <img src="images/SPA_HW/chef01.jpg" alt="男主廚 Ethan Chen">
@@ -2325,7 +2567,8 @@
                 </div>
 
                 <!-- 女主廚 -->
-                <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s09-card">
                         <div class="s09-imgbox">
                             <img src="images/SPA_HW/chef02.jpg" alt="女主廚 Claire Lin">
@@ -2358,10 +2601,10 @@
     </section>
     <!-- section 10 品牌歷程 -->
     <section id="s10">
-        <!-- S10 Our Journey -->
         <section id="s10">
             <div class="container">
-                <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <h5>OUR JOURNEY</h5>
                     <h2>品牌歷程</h2>
                     <p>從一份料理初心，到每一次美好的餐桌相聚。</p>
@@ -2369,12 +2612,14 @@
 
                 <div class="s10-timeline">
                     <div class="row align-items-center s10-timeline-pointer">
-                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-imgbox">
                                 <img src="images/SPA_HW/journey01.jpg" alt="品牌創立">
                             </div>
                         </div>
-                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-content">
                                 <span>2018</span>
                                 <h3>一份關於料理的初心</h3>
@@ -2384,12 +2629,14 @@
                     </div>
 
                     <div class="row flex-row-reverse align-items-center s10-timeline-pointer">
-                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-imgbox">
                                 <img src="images/SPA_HW/journey02.jpg" alt="探索季節食材">
                             </div>
                         </div>
-                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-content">
                                 <span>2020</span>
                                 <h3>尋找四季的風味</h3>
@@ -2399,12 +2646,14 @@
                     </div>
 
                     <div class="row align-items-center s10-timeline-pointer">
-                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-imgbox">
                                 <img src="images/SPA_HW/journey03.jpg" alt="餐廳正式成立">
                             </div>
                         </div>
-                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-content">
                                 <span>2023</span>
                                 <h3>打造理想中的餐桌</h3>
@@ -2414,12 +2663,14 @@
                     </div>
 
                     <div class="row flex-row-reverse align-items-center s10-timeline-pointer">
-                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-imgbox">
                                 <img src="images/SPA_HW/journey04.jpg" alt="延續品牌理念">
                             </div>
                         </div>
-                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                        <div class="col-md-6 wow animate__fadeInLeft" data-wow-duration="2s" data-wow-delay="0s"
+                            data-wow-iteration="1">
                             <div class="s10-content">
                                 <span>2026</span>
                                 <h3>延續每一份美好</h3>
@@ -2433,8 +2684,10 @@
     </section>
     <!-- section 11 用餐環境 -->
     <section id="s11">
-        <div class="s11-image wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
-            <div class="s11-overlay wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+        <div class="s11-image wow animate__fadeInDown" data-wow-duration="1s" data-wow-delay="0s"
+            data-wow-iteration="1">
+            <div class="s11-overlay wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>DINING EXPERIENCE</h5>
                 <h2>品味每一刻，享受美好時光</h2>
                 <p>
@@ -2449,39 +2702,46 @@
     <!-- section 12 影像藝廊 -->
     <section id="s12">
         <div class="container">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>OUR GALLERY</h5>
                 <h2>影像藝廊</h2>
                 <p>捕捉每一個值得珍藏的用餐時刻。</p>
             </div>
 
             <div class="row g-3">
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery01.jpg" alt="主廚擺盤">
                     </div>
                 </div>
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.15s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.15s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery02.jpg" alt="員工合照">
                     </div>
                 </div>
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.3s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.3s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery03.jpg" alt="早晨開班">
                     </div>
                 </div>
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.45s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.45s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery04.jpg" alt="服務員與孩童">
                     </div>
                 </div>
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.6s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.6s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery05.jpg" alt="櫃台結帳員">
                     </div>
                 </div>
-                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.75s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInDown" data-wow-duration="1.5s" data-wow-delay="0.75s"
+                    data-wow-iteration="1">
                     <div class="s12-gallery-item">
                         <img src="images/SPA_HW/gallery06.jpg" alt="慶生活動">
                     </div>
@@ -2492,14 +2752,16 @@
     <!-- section 13 最新消息 -->
     <section id="s13">
         <div class="container">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>NEWS & EVENTS</h5>
                 <h2>最新消息</h2>
                 <p>探索 LES SAISONS 的季節風味與餐桌故事。</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s13-card">
                         <img src="images/SPA_HW/news01.jpg" alt="秋日限定季節新菜">
                         <div class="s13-content">
@@ -2510,7 +2772,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="1.5s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s13-card">
                         <img src="images/SPA_HW/news02.jpg" alt="法式微醺之夜">
                         <div class="s13-content">
@@ -2521,7 +2784,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s13-card">
                         <img src="images/SPA_HW/news03.jpg" alt="甜點新品登場">
                         <div class="s13-content">
@@ -2537,7 +2801,8 @@
     <!-- section 14 顧客評價 -->
     <section id="s14">
         <div class="container">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>GUEST REVIEWS</h5>
                 <h2>顧客評價</h2>
                 <p>每一份用心，都值得被分享。</p>
@@ -2552,7 +2817,8 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s14-card">
                         <div class="s14-stars">
                             <i class="fa-solid fa-star"></i>
@@ -2567,7 +2833,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="1.75s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="1.75s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s14-card">
                         <div class="s14-stars">
                             <i class="fa-solid fa-star"></i>
@@ -2582,7 +2849,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-4 wow animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <div class="s14-card">
                         <div class="s14-stars">
                             <i class="fa-solid fa-star"></i>
@@ -2602,13 +2870,15 @@
     <!-- section 15 線上訂位 -->
     <section id="s15">
         <div class="container py-5">
-            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="text-center mb-5 wow animate__fadeInDown" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <h5>RESERVATION</h5>
                 <h2>預約訂位</h2>
                 <p>為您預留一段美好的用餐時光，期待您的光臨。</p>
             </div>
 
-            <div class="row justify-content-center wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">
+            <div class="row justify-content-center wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="0s"
+                data-wow-iteration="1">
                 <div class="col-md-8">
                     <div class="s15-card">
                         <div class="s15-card-title">
@@ -2695,7 +2965,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Google Maps -->
-                <div class="col-md-7 wow animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0s" data-wow-iteration="1">
+                <div class="col-md-7 wow animate__fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0s"
+                    data-wow-iteration="1">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.018572973833!2d120.61001019999999!3d24.171081400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693f9e708cdcb5%3A0xf3bd23ef17ee2a28!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y6KGM5pS_5aSn5qiT!5e0!3m2!1szh-TW!2stw!4v1794224328178!5m2!1szh-TW!2stw"
                         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -2703,7 +2974,8 @@
                     </iframe>
                 </div>
                 <!-- 營業資訊 -->
-                <div class="col-md-5 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-iteration="1">
+                <div class="col-md-5 wow animate__fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-iteration="1">
                     <h2>VISIT US</h2>
                     <p>營業時間</p>
                     <p>週二至週日</p>
@@ -2748,19 +3020,19 @@
                     <!-- 快速導覽：col-md-5 -->
                     <div class="col-md-5 mt-3">
                         <h5>Our Social Media</h5>
-                        <a href="#" class="text-decoration-none">
+                        <a href="" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-square-instagram fa-2x" style="color: #ffffff;"></i>
                         </a>
-                        <a href="#" class="text-decoration-none">
+                        <a href="" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-square-threads fa-2x" style="color: #ffffff;"></i>
                         </a>
-                        <a href="#" class="text-decoration-none">
+                        <a href="" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-square-x-twitter fa-2x" style="color: #ffffff;"></i>
                         </a>
-                        <a href="#" class="text-decoration-none">
+                        <a href="" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-square-facebook fa-2x" style="color: #ffffff;"></i>
                         </a>
-                        <a href="#" class="text-decoration-none">
+                        <a href="" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-square-youtube fa-2x" style="color: #ffffff;"></i>
                         </a>
                     </div>
@@ -2779,6 +3051,7 @@
             </div>
         </footer>
     </section>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
@@ -2832,7 +3105,224 @@
             IO.observe(el);
         });
     </script>
-    
+
+    <!-- 會員系統 -->
+    <script>
+        const registerForm = document.getElementById('registerForm');
+
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('registerUsername');
+            const password = document.getElementById('registerPassword');
+            const confirmPassword = document.getElementById('registerConfirmPassword');
+            const agreement = document.getElementById('registerAgreement');
+
+            // 確認密碼是否一致
+            confirmPassword.setCustomValidity(
+                password.value === confirmPassword.value ? '' : '密碼不一致'
+            );
+
+            // 檢查表單
+            registerForm.classList.add('was-validated');
+
+            if (!registerForm.checkValidity() || !agreement.checked) {
+                if (!agreement.checked) {
+                    alert('請先勾選同意會員規範。');
+                }
+                return;
+            }
+
+            alert('表單驗證成功！目前尚未建立會員資料。');
+
+            registerForm.reset();
+            registerForm.classList.remove('was-validated');
+            confirmPassword.setCustomValidity('');
+        });
+
+        // 會員登入表單
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            loginForm.classList.add('was-validated');
+
+            if (!loginForm.checkValidity()) {
+                return;
+            }
+
+            alert('表單驗證成功！目前尚未連接會員資料。');
+        });
+
+    </script>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- 標題 -->
+                <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5 text-light" id="registerModalLabel">
+                        註冊會員
+                    </h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="關閉"></button>
+                </div>
+
+                <!-- 內容 -->
+                <div class="modal-body">
+                    <div class="row g-4">
+
+                        <!-- 左側：安全與權益說明 -->
+                        <div class="col-12 col-md-5">
+                            <h6 class="mb-3">
+                                歡迎加入！註冊前請詳閱以下安全與權益說明：
+                            </h6>
+
+                            <p>• <b>資料真實</b>：請填寫正確資料，以免影響帳號管理。</p>
+                            <p>• <b>帳號防護</b>：請設定包含大小寫字母與數字的密碼。</p>
+                            <p>• <b>單一帳號</b>：每人限註冊一個會員帳號。</p>
+                            <p>• <b>驗證時效</b>：請於指定時間內完成驗證。</p>
+                            <p>• <b>遵守規範</b>：註冊即表示同意會員服務規範。</p>
+
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input" id="registerAgreement" required>
+                                <label for="registerAgreement" class="form-check-label">
+                                    已詳閱並同意上述規定
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 右側：註冊表單 -->
+                        <div class="col-12 col-md-7">
+                            <form id="registerForm" novalidate>
+
+                                <div class="mb-3">
+                                    <label for="registerUsername" class="form-label">
+                                        帳號
+                                    </label>
+                                    <input type="text" class="form-control" id="registerUsername"
+                                        placeholder="請輸入 4～20 個英數字" minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+"
+                                        autocomplete="username" required>
+                                    <div class="invalid-feedback">
+                                        帳號須為 4～20 個英數字。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">
+                                        密碼
+                                    </label>
+                                    <input type="password" class="form-control" id="registerPassword"
+                                        placeholder="請輸入至少 8 個字元" minlength="8" autocomplete="new-password" required>
+                                    <div class="invalid-feedback">
+                                        密碼至少需要 8 個字元。
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registerConfirmPassword" class="form-label">
+                                        確認密碼
+                                    </label>
+                                    <input type="password" class="form-control" id="registerConfirmPassword"
+                                        placeholder="請再次輸入密碼" autocomplete="new-password" required>
+                                    <div class="invalid-feedback">
+                                        兩次輸入的密碼不一致。
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 按鈕 -->
+                <div class="modal-footer">
+                    <a href="#" class="me-auto text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        已有帳號？立即登入
+                    </a>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        取消
+                    </button>
+
+                    <button type="submit" class="btn btn-primary" form="registerForm">
+                        註冊
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- 標題 -->
+                <div class="modal-header bg-secondary">
+                    <h1 class="modal-title fs-5 text-light" id="loginModalLabel">
+                        會員登入
+                    </h1>
+
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="關閉"></button>
+                </div>
+
+                <!-- 內容 -->
+                <div class="modal-body">
+                    <form id="loginForm" novalidate>
+
+                        <div class="mb-3">
+                            <label for="loginUsername" class="form-label">
+                                帳號
+                            </label>
+                            <input type="text" class="form-control" id="loginUsername" placeholder="請輸入帳號"
+                                autocomplete="username" required>
+                            <div class="invalid-feedback">
+                                請輸入帳號。
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">
+                                密碼
+                            </label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="請輸入密碼"
+                                autocomplete="current-password" required>
+                            <div class="invalid-feedback">
+                                請輸入密碼。
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- 按鈕 -->
+                <div class="modal-footer">
+                    <a href="#" class="me-auto text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">
+                        還沒有帳號？立即註冊
+                    </a>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        取消
+                    </button>
+
+                    <button type="submit" class="btn btn-primary" form="loginForm">
+                        確認登入
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 
